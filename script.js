@@ -49,6 +49,17 @@ class Stopwatch extends React.Component {
             this.running = false;
             clearInterval(this.watch);
         }
+
+        render = () => {
+            return (
+                <div className={'stopwatch'}>
+                    <button id={'start'} onClick={(stopwatch.start())}>
+                    </button>
+                    <button id={'stop'} onClick={(stopwatch.stop())}>
+                    </button>
+                </div>
+            );
+        }
     }
 
     pad0(value) {
@@ -59,12 +70,3 @@ class Stopwatch extends React.Component {
         return result;
     }
 }
-
-const stopwatch = new Stopwatch(
-    document.querySelector('.stopwatch'));
-
-let startButton = document.getElementById('start');
-startButton.addEventListener('click', () => stopwatch.start());
-
-let stopButton = document.getElementById('stop');
-stopButton.addEventListener('click', () => stopwatch.stop());
